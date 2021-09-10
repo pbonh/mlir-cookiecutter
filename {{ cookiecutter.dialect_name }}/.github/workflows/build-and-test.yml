@@ -35,13 +35,13 @@ jobs:
         uses: actions/cache@v2
         with:
           path: llvm-project
-          key: ${{ runner.os }}-llvm-install-${{ env.LLVM_COMMIT }}
+          key: {% raw %}${{ runner.os }}-llvm-install-${{ env.LLVM_COMMIT }}{% endraw %}
       - name: Get LLVM
         if: steps.cache-llvm.outputs.cache-hit != 'true'
         uses: actions/checkout@v2
         with:
           repository: 'llvm/llvm-project'
-          ref: '${{ env.LLVM_COMMIT }}'
+          ref: {% raw %}'${{ env.LLVM_COMMIT }}'{% endraw %}
           path: 'llvm-project'
       - name: Install LLVM
         if: steps.cache-llvm.outputs.cache-hit != 'true'
@@ -55,12 +55,12 @@ jobs:
         run: |
           mkdir $GITHUB_WORKSPACE/mlir-{{ cookiecutter.dialect_name }}/sanitizer-build
           cd $GITHUB_WORKSPACE/mlir-{{ cookiecutter.dialect_name }}/sanitizer-build
-          cmake $GITHUB_WORKSPACE/mlir-{{ cookiecutter.dialect_name }} -DCMAKE_BUILD_TYPE=Debug -DUSE_SANITIZER='Address;Undefined' ${{ env.CMAKE_FLAGS }}
+          cmake $GITHUB_WORKSPACE/mlir-{{ cookiecutter.dialect_name }} -DCMAKE_BUILD_TYPE=Debug -DUSE_SANITIZER='Address;Undefined' {% raw %}${{ env.CMAKE_FLAGS }}{% endraw %}
           cmake --build . --target check-{{ cookiecutter.dialect_name }}-opt -- -j$(nproc)
       - name: Release build
         run: |
           mkdir $GITHUB_WORKSPACE/mlir-{{ cookiecutter.dialect_name }}/build
           cd $GITHUB_WORKSPACE/mlir-{{ cookiecutter.dialect_name }}/build
-          cmake $GITHUB_WORKSPACE/mlir-{{ cookiecutter.dialect_name }} -DCMAKE_BUILD_TYPE=Release ${{ env.CMAKE_FLAGS }}
+          cmake $GITHUB_WORKSPACE/mlir-{{ cookiecutter.dialect_name }} -DCMAKE_BUILD_TYPE=Release {% raw %}${{ env.CMAKE_FLAGS }}{% endraw %}
           cmake --build . --target check-{{ cookiecutter.dialect_name }}-opt -- -j$(nproc)
 
