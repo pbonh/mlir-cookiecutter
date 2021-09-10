@@ -1,0 +1,9 @@
+{
+    "dialect_name": "mlirdialect",
+    "dialect_name_upper": "MLIRDialect",
+    "dialect_name_allcaps": "MLIRDIALECT",
+    "repo_name": "{{ cookiecutter.dialect_name.lower().replace(' ', '_') }}",
+    "author_name": "Your name (or your organization/company/team)",
+    "description": "A MLIR Dialect.",
+    "open_source_license": "MIT"
+}
