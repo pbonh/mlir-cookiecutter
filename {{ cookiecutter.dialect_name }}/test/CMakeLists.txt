@@ -12,8 +12,8 @@ set({{ cookiecutter.dialect_name_allcaps }}_OPT_TEST_DEPENDS
 
 add_lit_testsuite(check-{{ cookiecutter.dialect_name }}-opt "Running the {{ cookiecutter.dialect_name }}-opt regression tests"
         ${CMAKE_CURRENT_BINARY_DIR}
-        DEPENDS ${ %raw }{{ %endraw }{{ cookiecutter.dialect_name_allcaps }}_OPT_TEST_DEPENDS}
+        DEPENDS ${% raw %}{{% endraw %}{{ cookiecutter.dialect_name_allcaps }}_OPT_TEST_DEPENDS}
         )
 set_target_properties(check-{{ cookiecutter.dialect_name }}-opt PROPERTIES FOLDER "Tests")
 
-add_lit_testsuites({{ cookiecutter.dialect_name_allcaps }}_OPT ${CMAKE_CURRENT_SOURCE_DIR} DEPENDS ${ %raw }{{ %endraw }{{ cookiecutter.dialect_name_allcaps }}_OPT_TEST_DEPENDS})
+add_lit_testsuites({{ cookiecutter.dialect_name_allcaps }}_OPT ${CMAKE_CURRENT_SOURCE_DIR} DEPENDS ${% raw %}{{% endraw %}{{ cookiecutter.dialect_name_allcaps }}_OPT_TEST_DEPENDS})
