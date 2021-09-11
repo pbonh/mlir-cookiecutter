@@ -8,7 +8,7 @@
 		"args": { "VARIANT": "ubuntu-20.04" }
 	},
 	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
-	"workspaceFolder": "/workspaces/llvm-project/mlir",
+	"workspaceFolder": "/workspaces/{{ cookiecutter.dialect_name }}",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {},
@@ -17,7 +17,8 @@
 	"extensions": [
 		"ms-vscode.cpptools",
 		"ms-vscode.cmake-tools",
-		"llvm-vs-code-extensions.vscode-clangd"
+		"llvm-vs-code-extensions.vscode-clangd",
+		"vadimcn.vscode-lldb"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
