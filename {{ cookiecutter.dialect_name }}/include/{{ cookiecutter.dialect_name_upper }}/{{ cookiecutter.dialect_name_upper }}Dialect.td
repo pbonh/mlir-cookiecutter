@@ -30,7 +30,7 @@ def {{ cookiecutter.dialect_name_upper }}_Dialect : Dialect {
 // Base {{ cookiecutter.dialect_name }} operation definition.
 //===----------------------------------------------------------------------===//
 
-class {{ cookiecutter.dialect_name_upper }}_Op<string mnemonic, list<OpTrait> traits = []> :
+class {{ cookiecutter.dialect_name_upper }}_Op<string mnemonic, list<Trait> traits = []> :
         Op<{{ cookiecutter.dialect_name_upper }}_Dialect, mnemonic, traits>;
 
 #endif // {{ cookiecutter.dialect_name_allcaps }}_DIALECT

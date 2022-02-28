@@ -10,6 +10,7 @@
 #define {{ cookiecutter.dialect_name_allcaps }}_OPS
 
 include "{{ cookiecutter.dialect_name_upper }}Dialect.td"
+include "mlir/Interfaces/InferTypeOpInterface.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
 
 def {{ cookiecutter.dialect_name_upper }}_FooOp : {{ cookiecutter.dialect_name_upper }}_Op<"foo", [NoSideEffect,
