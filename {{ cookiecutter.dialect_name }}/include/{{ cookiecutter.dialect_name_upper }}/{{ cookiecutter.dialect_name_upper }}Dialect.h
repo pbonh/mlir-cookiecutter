@@ -11,6 +11,6 @@
 
 #include "mlir/IR/Dialect.h"
 
-#include "{{ cookiecutter.dialect_name_upper }}/{{ cookiecutter.dialect_name_upper }}OpsDialect.h.inc"
+#include "{{ cookiecutter.dialect_name_upper }}/{{ cookiecutter.dialect_name_upper }}Dialect.h.inc"
 
 #endif // {{ cookiecutter.dialect_name_allcaps }}_{{ cookiecutter.dialect_name_allcaps }}DIALECT_H
