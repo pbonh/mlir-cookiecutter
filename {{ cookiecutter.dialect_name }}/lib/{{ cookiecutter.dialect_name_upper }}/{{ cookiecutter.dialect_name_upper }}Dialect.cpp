@@ -19,6 +19,6 @@ using namespace mlir::{{ cookiecutter.dialect_name }};
 void {{ cookiecutter.dialect_name_upper }}Dialect::initialize() {
   addOperations<
 #define GET_OP_LIST
-#include "{{ cookiecutter.dialect_name_upper }}/{{ cookiecutter.dialect_name_upper }}Ops.cpp.inc"
+#include "{{ cookiecutter.dialect_name_upper }}/{{ cookiecutter.dialect_name_upper }}Ops.h.inc"
       >();
 }
