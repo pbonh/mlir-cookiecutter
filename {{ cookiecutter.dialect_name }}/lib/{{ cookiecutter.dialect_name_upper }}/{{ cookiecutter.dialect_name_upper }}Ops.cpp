@@ -11,4 +11,4 @@
 #include "mlir/IR/OpImplementation.h"
 
 #define GET_OP_CLASSES
-#include "{{ cookiecutter.dialect_name_upper }}/{{ cookiecutter.dialect_name_upper }}Ops.cpp.inc"
+#include "{{ cookiecutter.dialect_name_upper }}/{{ cookiecutter.dialect_name_upper }}Ops.h.inc"
