@@ -15,6 +15,6 @@
 #include "mlir/Interfaces/SideEffectInterfaces.h"
 
 #define GET_OP_CLASSES
-#include "{{ cookiecutter.dialect_name_upper }}/{{ cookiecutter.dialect_name_upper }}Ops.h.inc"
+#include "{{ cookiecutter.dialect_name_upper }}/{{ cookiecutter.dialect_name_upper }}Ops.cpp.inc"
 
 #endif // {{ cookiecutter.dialect_name_allcaps }}_{{ cookiecutter.dialect_name_allcaps }}ONEOPS_H
